@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ExtensionInstallBlocklist</key>
+	<array>
+		<!-- ID for 1clickVPN -->
+		<string>fcfhplploccackoneaefokcmbjfbkenj</string>
+		<!-- ID SpeakIt! -->
+		<string>pgeolalilifpodheeocdmbhehgnkkbak</string>
+		<!-- ID for SuperZoom -->
+		<string>gnamdgilanlgeeljfnckhboobddoahbl</string>
+		<!-- ID for FairShare Unlock -->
+		<string>alecjlhgldihcjjcffgjalappiifdhae</string>
+		<!-- ID for PanelMeasurement -->
+		<string>kelbkhobcfhdcfhohdkjnaimmicmhcbo</string>
+		<!-- ID for Branded Surveys -->
+		<string>dpglnfbihebejclmfmdcbgjembbfjneo</string>
+		<!-- ID for Panel Community Surveys -->
+		<string>lpjhpdcflkecpciaehfbpafflkeomcnb</string>
+	</array>
+	<key>ExtensionInstallForcelist</key>
+	<array>
+		<!-- ID for 1Password X -->
+		<string>aeblfdkhhhdcdjpifhhbdiojplfjncoa</string>
+	</array>
+	<key>NewTabPageLocation</key>
+	<string>https://jamf.com</string>
+</dict>
+</plist>
