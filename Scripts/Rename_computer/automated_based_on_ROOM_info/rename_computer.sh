@@ -16,7 +16,7 @@ USERINFO=$(curl -k ${jssURL}JSSResource/computers/serialnumber/${SERIAL}/subset/
 ROOM=$(echo $USERINFO | /usr/bin/awk -F'<room>|</room>' '{print $2}')
 
 if [ -z "$ROOM" ]; then # Return TRUE if $ROOM variable is Empty.
-	COMPUTER_NAME="$SERIAL"
+    COMPUTER_NAME="$SERIAL"
 else
     COMPUTER_NAME=$ROOM-"$SERIAL"
 fi
