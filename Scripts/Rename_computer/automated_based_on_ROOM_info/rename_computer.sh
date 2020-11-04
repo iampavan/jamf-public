@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# This script will rename the computer based on the assigned user's "ROOM" info from Jamf Pro inventory.
+
 # Heavily based on -
 # https://www.jamf.com/jamf-nation/discussions/29746/api-call-to-get-computers-assigned-user-in-jamf-pro
 
@@ -8,8 +10,8 @@ jssURL="https://jamf.domain.com:8443/"
 apiUser="apiuser"
 apiPass="apipassword"
 
-# SERIAL="C02PRAJUVM02"
 SERIAL=$(ioreg -c IOPlatformExpertDevice -d 2 | awk -F\" '/IOPlatformSerialNumber/{print $(NF-1)}')
+# SERIAL="C02PRAJUVM02"
 
 USERINFO=$(curl -k ${jssURL}JSSResource/computers/serialnumber/${SERIAL}/subset/location -H "Accept: application/xml" --user "${apiUser}:${apiPass}")
 
