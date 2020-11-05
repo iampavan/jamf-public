@@ -1,12 +1,24 @@
 #!/bin/sh
-
+####################################################################################################
+#
+# THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
+# AS SUCH IT IS PROVIDED WITHOUT WARRANTY OR SUPPORT
+#
+# BY USING THIS SCRIPT, YOU AGREE THAT JAMF SOFTWARE
+# IS UNDER NO OBLIGATION TO SUPPORT, DEBUG, OR OTHERWISE
+# MAINTAIN THIS SCRIPT
+#
+####################################################################################################
+#
+# DESCRIPTION
 # This script will rename the computer based on the extenstion attribute from Jamf Pro inventory.
 # For instance, in this script the name of the EA is "Office Name"
 # You can set the EXT_ATT_NAME variable to whatever EA you are using.
 
 # This script can be used in conjunction with this EA -
 # https://github.com/iampavan/jamf-public/tree/main/EA/LDAP_search_for_country_name_based_on_user
-
+#
+####################################################################################################
 # Variables
 jssURL="https://jamf.domain.com:8443/"
 apiUser="apiuser"

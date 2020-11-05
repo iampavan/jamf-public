@@ -1,10 +1,22 @@
 #!/bin/sh
-
+####################################################################################################
+#
+# THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
+# AS SUCH IT IS PROVIDED WITHOUT WARRANTY OR SUPPORT
+#
+# BY USING THIS SCRIPT, YOU AGREE THAT JAMF SOFTWARE
+# IS UNDER NO OBLIGATION TO SUPPORT, DEBUG, OR OTHERWISE
+# MAINTAIN THIS SCRIPT
+#
+####################################################################################################
+#
+# DESCRIPTION
 # This is an EA that performs an LDAP search based on the username that's assigned to the computer in Jamf Pro,
 # and the search can be filtered out based on any LDAP attribute.
-
+#
 # EA name : Office Name (It can be called whatever.)
-
+#
+####################################################################################################
 # Variables
 jssURL="https://jamf.domain.com:8443/"
 apiUser="apiuser"

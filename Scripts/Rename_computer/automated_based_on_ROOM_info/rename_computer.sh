@@ -1,10 +1,22 @@
 #!/bin/sh
-
+####################################################################################################
+#
+# THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
+# AS SUCH IT IS PROVIDED WITHOUT WARRANTY OR SUPPORT
+#
+# BY USING THIS SCRIPT, YOU AGREE THAT JAMF SOFTWARE
+# IS UNDER NO OBLIGATION TO SUPPORT, DEBUG, OR OTHERWISE
+# MAINTAIN THIS SCRIPT
+#
+####################################################################################################
+#
+# DESCRIPTION
 # This script will rename the computer based on the assigned user's "ROOM" info from Jamf Pro inventory.
 
 # Heavily based on -
 # https://www.jamf.com/jamf-nation/discussions/29746/api-call-to-get-computers-assigned-user-in-jamf-pro
-
+#
+####################################################################################################
 # Variables
 jssURL="https://jamf.domain.com:8443/"
 apiUser="apiuser"

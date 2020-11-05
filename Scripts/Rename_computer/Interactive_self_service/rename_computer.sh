@@ -1,8 +1,20 @@
 #!/bin/sh
-
+####################################################################################################
+#
+# THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
+# AS SUCH IT IS PROVIDED WITHOUT WARRANTY OR SUPPORT
+#
+# BY USING THIS SCRIPT, YOU AGREE THAT JAMF SOFTWARE
+# IS UNDER NO OBLIGATION TO SUPPORT, DEBUG, OR OTHERWISE
+# MAINTAIN THIS SCRIPT
+#
+####################################################################################################
+#
+# DESCRIPTION
 # Use the country names in the script parameters ($4, $5....)
 # Example output = USA-C02VMTEST00
-
+#
+####################################################################################################
 # variables
 LOGGED_IN_USER=$(stat -f%Su /dev/console)
 LOGGED_IN_UID=$(id -u $LOGGED_IN_USER)
