@@ -6,7 +6,7 @@
 	<string>com.company.disable_ethernet_interface</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/tmp/disable_ethernet.zsh</string>
+		<string>/Library/My_Company/disable_ethernet.zsh</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>
