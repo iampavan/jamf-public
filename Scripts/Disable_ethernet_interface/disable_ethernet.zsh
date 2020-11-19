@@ -22,9 +22,4 @@ while read networkService; do
 	fi
 done < <( networksetup -listnetworkserviceorder | awk '/^\([0-9]/{$1 ="";gsub("^ ","");print}' )
 
-# Then add that in a script, and launch the script by adding
-# <key>WatchPaths</key><string>/Library/Preferences/SystemConfiguration</string>
-# in the launchDemon
-
-
-
+exit 0
