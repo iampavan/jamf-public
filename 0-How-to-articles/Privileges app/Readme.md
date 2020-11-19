@@ -23,3 +23,5 @@
 
 - https://github.com/SAP/macOS-enterprise-privileges/releases
 
+- Building an installer package for Privileges.app using Whitebox Packages :
+    - https://derflounder.wordpress.com/2019/03/20/building-an-installer-package-for-privileges-app/
