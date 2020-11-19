@@ -1,3 +1,9 @@
+## Problem Statement
+
+- *Disable* all the Network Interfaces except Wi-fi.
+    - OR
+- Make all the Network Interfaces *Inactive* except Wi-Fi.
+
 ## Script
 
 - `disable_ethernet.zsh`
