@@ -13,6 +13,6 @@
 	<key>WatchPaths</key>
 	<array>
 		<string>/Library/Preferences/SystemConfiguration/NetworkInterfaces.plist</string>
-  </array>
+	</array>
 </dict>
 </plist>
