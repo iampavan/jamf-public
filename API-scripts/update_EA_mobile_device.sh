@@ -50,7 +50,7 @@ jamfPassword="apipassword"
 
 # The filename should not contain spaces
 file="/Users/demo/Desktop/sample_mobile_devices.csv"
-# Also, update line 136 and line 138 with appropriate column numbers
+# Also, update line 138 and line 140 with appropriate column numbers
 
 # information required
 # ------------------------
