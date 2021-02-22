@@ -133,7 +133,9 @@ while [ $counter -lt $mobileqty ]
 do
     counter=$[$counter+1]
     line=`echo "$data" | head -n $counter | tail -n 1`
+    # This assumes column 4 in CSV file contains Serial numbers
     SERIAL=`echo "$line" | awk -F , '{print $4}'`
+    # This assumes column 7 in CSV file contains EA values
     eaValue=`echo "$line" | awk -F , '{print $7}'`
 
     echo -e "\n\nAttempting to update EA value for $SERIAL"
