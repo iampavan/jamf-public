@@ -143,8 +143,6 @@ do
     echo $SERIAL "----->" $eaValue
     
     # Call the API PUT function
-    # put_EA__int_value
-
     output="$(put_EA__int_value)"
 
     #Error Checking
