@@ -17,6 +17,8 @@
 #
 # Ref : https://www.jamf.com/jamf-nation/discussions/14880/jss-api-experts-command-help-needed#responseChild91184
 #
+# https://www.modtitan.com/2018/01/reusable-script-for-updating-ea-values.html
+#
 ####################################################################################################
 #
 # OUTPUT SAMPLE :
@@ -42,20 +44,21 @@
 
 
 # server information
-jamfURL="https://url.jamfcloud.com/JSSResource"
+jamfURL="https://url.jamfcloud.com"
 jamfUser="apiuser"
 jamfPassword="apipassword"
 
 # The filename should not contain spaces
 file="/Users/demo/Desktop/sample_mobile_devices.csv"
+# Also, update line 136 and line 138 with appropriate column numbers
 
 # information required
 # ------------------------
 # For String EA
 # ------------------------
-# eaID="1" #set EA ID in parameter 6
 # extAttName="\"Jamf-Setup-Role\""
-# eaName="Jamf-Setup-Role" #set EA Name in parameter 7
+# eaID="1" #set EA ID
+# eaName="Jamf-Setup-Role"
 # eaValue="Personal use" #set "Personal use" or "In-flight"
 # ------------------------
 # For Integer EA
@@ -75,10 +78,10 @@ function xpath() {
 }
 
 function get_EA_value() {
-    apiData=$( /usr/bin/curl --insecure --user "$jamfUser":"$jamfPassword" \
+    apiData=$( /usr/bin/curl -k -s -u "$jamfUser":"$jamfPassword" \
     --header "Accept: text/xml" \
     --request GET \
-    $jamfURL/mobiledevices/serialnumber/${SERIAL} )
+    $jamfURL/JSSResource/mobiledevices/serialnumber/${SERIAL} )
 
     eaName=$(echo $apiData | xpath "/mobile_device/extension_attributes/extension_attribute[name=$extAttName]" 2>&1 | awk -F'<value>|</value>' '{print $2}')
 
@@ -90,20 +93,20 @@ function get_EA_value() {
 }
 
 function put_EA__string_value() {
-    /usr/bin/curl --insecure --user "$jamfUser":"$jamfPassword" \
+    /usr/bin/curl -k -s -u "$jamfUser":"$jamfPassword" \
     --header "Accept: text/xml" \
     --request PUT \
-    $jamfURL/mobiledevices/serialnumber/${SERIAL} \
+    $jamfURL/JSSResource/mobiledevices/serialnumber/${SERIAL} \
         -H "Content-Type: application/xml" \
         -H "Accept: application/xml" \
         -d "<mobile_device><extension_attributes><extension_attribute><id>$eaID</id><name>$eaName</name><type>String</type><multi_value>false</multi_value><value>$eaValue</value></extension_attribute></extension_attributes></mobile_device>"
 }
 
 function put_EA__int_value() {
-    /usr/bin/curl --insecure --user "$jamfUser":"$jamfPassword" \
+    /usr/bin/curl -k -s -u "$jamfUser":"$jamfPassword" \
     --header "Accept: text/xml" \
     --request PUT \
-    $jamfURL/mobiledevices/serialnumber/${SERIAL} \
+    $jamfURL/JSSResource/mobiledevices/serialnumber/${SERIAL} \
         -H "Content-Type: application/xml" \
         -H "Accept: application/xml" \
         -d "<mobile_device><extension_attributes><extension_attribute><id>$eaID</id><name>$eaName</name><type>Number</type><multi_value>false</multi_value><value>$eaValue</value></extension_attribute></extension_attributes></mobile_device>"
@@ -125,8 +128,6 @@ echo "Mobileqty= " $mobileqty
 counter="1"
 
 duplicates=[]
-
-id=$((id+1))
 
 #Loop through the CSV and submit data to the API
 while [ $counter -lt $mobileqty ]
@@ -151,12 +152,9 @@ do
     if [[ $error != "" ]]; then
         duplicates+=($SERIAL)
     fi
-    #Increment the ID variable for the next user
-    id=$((id+1))
 done
 
 echo -e "\n\nThe following mobile devices could not be updated:"
 printf -- '%s\n' "${duplicates[@]}"
-
 
 exit 0
