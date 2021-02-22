@@ -47,7 +47,7 @@ jamfUser="apiuser"
 jamfPassword="apipassword"
 
 # The filename should not contain spaces
-file="/Users/demo/Desktop/sample_mobile-devices.csv"
+file="/Users/demo/Desktop/sample_mobile_devices.csv"
 
 # information required
 # ------------------------
