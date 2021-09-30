@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Identifier</key>
+	<string>local.pkg.Xcode-pavan-LATEST-beta</string>
+	<key>Input</key>
+	<dict>
+		<key>APPLE_ID</key>
+		<string>.......</string>
+		<key>BETA</key>
+		<string>Beta</string>
+		<key>BUILD_NUMBER_EMIT_PATH</key>
+		<string>%RECIPE_CACHE_DIR%/xcode_build_number</string>
+		<key>NAME</key>
+		<string>Xcode</string>
+		<key>NOSKIP</key>
+		<string></string>
+		<key>PASSWORD_FILE</key>
+		<string>/Users/....../Library/AutoPkg/RecipeOverrides/secret.txt</string>
+		<key>PATTERN</key>
+		<string>(.*\/Xcode_.*\/Xcode.*.xip)</string>
+		<key>VERSION_EMIT_PATH</key>
+		<string>%RECIPE_CACHE_DIR%/xcode_tag</string>
+	</dict>
+	<key>ParentRecipe</key>
+	<string>com.facebook.autopkg.xcode.extract</string>
+	<key>ParentRecipeTrustInfo</key>
+	<dict>
+		<key>non_core_processors</key>
+		<dict>
+			<key>AppleCookieDownloader</key>
+			<dict>
+				<key>git_hash</key>
+				<string>e5fb3593a1045861dfb147c17e3e4f794055782f</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.facebook.Recipes-for-AutoPkg/Xcode/AppleCookieDownloader.py</string>
+				<key>sha256_hash</key>
+				<string>4b0a9dd7b66605c13210d7a0530f0235aacbdb6eee806f7b80c9744a2d2c39f5</string>
+			</dict>
+			<key>AppleDataGatherer</key>
+			<dict>
+				<key>git_hash</key>
+				<string>e5fb3593a1045861dfb147c17e3e4f794055782f</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.facebook.Recipes-for-AutoPkg/Xcode/AppleDataGatherer.py</string>
+				<key>sha256_hash</key>
+				<string>f5e0f6789e47abb07045e221924af4b735ed16e8cf0ff28edb4d4d6676bcd69c</string>
+			</dict>
+			<key>AppleURLSearcher</key>
+			<dict>
+				<key>git_hash</key>
+				<string>e5fb3593a1045861dfb147c17e3e4f794055782f</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.facebook.Recipes-for-AutoPkg/Xcode/AppleURLSearcher.py</string>
+				<key>sha256_hash</key>
+				<string>711eb234fd2bd78f0c73ad80bef60c6024612848feacd4f944ca767118b41519</string>
+			</dict>
+			<key>XcodeBuildNumberEmitter</key>
+			<dict>
+				<key>git_hash</key>
+				<string>c007f8f3e7e683ea3b46fc90b3b5ff8a7e017efa</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.facebook.Recipes-for-AutoPkg/Xcode/XcodeBuildNumberEmitter.py</string>
+				<key>sha256_hash</key>
+				<string>57f4251cda4e6ae18ab9cf809dfd33ff9ac7fcbccfa211fa399658851f34d82c</string>
+			</dict>
+			<key>XcodeVersionEmitter</key>
+			<dict>
+				<key>git_hash</key>
+				<string>40202a7dd2db8c39abe9b89c1fa2751a5e6d4613</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.facebook.Recipes-for-AutoPkg/Xcode/XcodeVersionEmitter.py</string>
+				<key>sha256_hash</key>
+				<string>9cc6393b9247cc63f7683a84d64efa9dfc365a94aed08488755c2e75053a6c65</string>
+			</dict>
+			<key>XcodeVersioner</key>
+			<dict>
+				<key>git_hash</key>
+				<string>40202a7dd2db8c39abe9b89c1fa2751a5e6d4613</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.facebook.Recipes-for-AutoPkg/Xcode/XcodeVersioner.py</string>
+				<key>sha256_hash</key>
+				<string>5223ca2a644c33252144244ae5c8b4b4637fe718a05067a846ae687eb3194a11</string>
+			</dict>
+			<key>XcodeXIPUnpacker</key>
+			<dict>
+				<key>git_hash</key>
+				<string>e5fb3593a1045861dfb147c17e3e4f794055782f</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.facebook.Recipes-for-AutoPkg/Xcode/XcodeXIPUnpacker.py</string>
+				<key>sha256_hash</key>
+				<string>9f5bfa772e31645df412ff5323df6396d9fbb2b6e39cc17666e81ef5b51820f1</string>
+			</dict>
+		</dict>
+		<key>parent_recipes</key>
+		<dict>
+			<key>com.facebook.autopkg.xcode.downloader</key>
+			<dict>
+				<key>git_hash</key>
+				<string>4abb3d992bd8c164d879fea431ee0559ac6c29ae</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.facebook.Recipes-for-AutoPkg/Xcode/Xcode.download.recipe</string>
+				<key>sha256_hash</key>
+				<string>f9a63ffae0b54ac5caac3ead9021d1a40cc31af619a03d427dde825950cb5baa</string>
+			</dict>
+			<key>com.facebook.autopkg.xcode.extract</key>
+			<dict>
+				<key>git_hash</key>
+				<string>40202a7dd2db8c39abe9b89c1fa2751a5e6d4613</string>
+				<key>path</key>
+				<string>~/Library/AutoPkg/RecipeRepos/com.github.facebook.Recipes-for-AutoPkg/Xcode/Xcode.extract.recipe</string>
+				<key>sha256_hash</key>
+				<string>309762512148a6c8ae8ac32658ef74300ef9ac8e9836ebd1ca37d90d602632db</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%_unpack/Xcode.app/Contents/Info.plist</string>
+				<key>plist_version_key</key>
+				<string>CFBundleShortVersionString</string>
+			</dict>
+			<key>Comment</key>
+			<string>Get version from the app</string>
+			<key>Processor</key>
+			<string>Versioner</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkgdirs</key>
+				<dict>
+					<key>Applications</key>
+					<string>0775</string>
+				</dict>
+				<key>pkgroot</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+			</dict>
+			<key>Processor</key>
+			<string>PkgRootCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>destination_path</key>
+				<string>%pkgroot%/Applications/%NAME%_%version%.app</string>
+				<key>source_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%_unpack/*.app</string>
+			</dict>
+			<key>Processor</key>
+			<string>Copier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>file_content</key>
+				<string>#!/bin/bash
+
+xcode_name="%NAME%"
+xcode_version="%version%"
+xcode_name_and_version="${xcode_name}_${xcode_version}.app"
+
+# Ensure everyone is a member of "developer" group
+/usr/sbin/dseditgroup -o edit -a everyone -t group _developer
+
+# Enable Developer Mode
+/usr/sbin/DevToolsSecurity -enable
+
+# Accept the license
+/Applications/${xcode_name_and_version}/Contents/Developer/usr/bin/xcodebuild -license accept
+
+# Install embedded packages
+for PKG in `/bin/ls /Applications/${xcode_name_and_version}/Contents/Resources/Packages/*.pkg` ; do
+  /usr/sbin/installer -pkg "$PKG" -target /
+done
+
+exit 0</string>
+				<key>file_mode</key>
+				<string>0755</string>
+				<key>file_path</key>
+				<string>/Users/testuser/Library/AutoPkg/RecipeOverrides/Scripts/postinstall</string>
+			</dict>
+			<key>Processor</key>
+			<string>FileCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_request</key>
+				<dict>
+					<key>chown</key>
+					<array>
+						<dict>
+							<key>group</key>
+							<string>admin</string>
+							<key>path</key>
+							<string>Applications</string>
+							<key>user</key>
+							<string>root</string>
+						</dict>
+					</array>
+					<key>id</key>
+					<string>com.autopkg.Xcode.pkg</string>
+					<key>options</key>
+					<string>purge_ds_store</string>
+					<key>pkgdir</key>
+					<string>%RECIPE_CACHE_DIR%</string>
+					<key>pkgname</key>
+					<string>%NAME%_%version%</string>
+					<key>scripts</key>
+					<string>/Users/testuser/Library/AutoPkg/RecipeOverrides/Scripts</string>
+					<key>version</key>
+					<string>%version%</string>
+				</dict>
+			</dict>
+			<key>Processor</key>
+			<string>PkgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>path_list</key>
+				<array>
+					<string>%RECIPE_CACHE_DIR%/%NAME%</string>
+					<string>%RECIPE_CACHE_DIR%/%NAME%_unpack</string>
+				</array>
+			</dict>
+			<key>Processor</key>
+			<string>PathDeleter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
