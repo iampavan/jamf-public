@@ -44,26 +44,10 @@ until [ "$FINDER_PROCESS" != "" ]; do
     FINDER_PROCESS=$(pgrep -l "Finder")
 done
 
-# until [ -f /var/log/jamf.log ]; do
-#     echo "Waiting for jamf log to appear"
-#     sleep 1
-# done
-# until (/usr/bin/grep -q enrollmentComplete /var/log/jamf.log); do
-#     echo "Waiting for jamf enrollment to be complete."
-#     sleep 1
-# done
-
-# Grab serial_no and 
+# Grab serial_no and username
 serial_no=$(ioreg -rd1 -c IOPlatformExpertDevice | awk -F'"' '/IOPlatformSerialNumber/{print $4}' | tail -c 5)
 lastUser=$(defaults read /Library/Preferences/com.apple.loginwindow lastUserName)
 AW_HOSTNAME="${serial_no}-${lastUser}"
-
-# # Enter usernames in the following string that we should ignore
-# if [[ "$lastUser" == admin || "$lastUser" == jamf || "$lastUser" == _mbsetupuser ]]; then
-#     echo "Local user is logged in last, skipping assignment"
-# else
-#     echo "$AW_HOSTNAME"
-# fi
 
 echo "$(date "+%a %h %d %H:%M:%S"): Local user is logged in last." >>"$LOG_PATH"
 echo "$(date "+%a %h %d %H:%M:%S"): $AW_HOSTNAME" >>"$LOG_PATH"
