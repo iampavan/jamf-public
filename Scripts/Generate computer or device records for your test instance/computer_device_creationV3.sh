@@ -17,17 +17,16 @@
 #
 # DESCRIPTION
 # 
-# - Script will generate computer or device records for your test instance.
+# Script will generate computer or device records for your test instance.
 #
-# - We enter the number of computers or devices that we want to create, it will then create a
-#	computer (picking a random model from an array), pick a random user, department and building for 
-#	the 'Location' details.
+# We enter the number of computers or devices that we want to create, it will then create a
+# computer (picking a random model from an array), pick a random user, department and building for
+# the 'Location' details.
 #
-# - When creating the record it will randomly generate things like the UDID, Macaddr, IPaddr, 
-#	memorySize, osversion and buildversion and more.
+# When creating the record it will randomly generate things like the UDID, Macaddr, IPaddr,
+# memorySize, osversion and buildversion and more.
 # 
 ####################################################################################################
-
 
 jssURL='https://instancename'
 apiUser='apiuser'
