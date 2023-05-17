@@ -7,6 +7,7 @@ apiPassword=""
 computer_id="3"
 user_id="1"
 
+# Get the Bearer Token
 apiBearerToken=$( /usr/bin/curl -X POST --silent -u "${apiUser}:${apiPassword}" "${apiURL}/api/v1/auth/token" | /usr/bin/plutil -extract token raw - )
 
 # -----------------------
