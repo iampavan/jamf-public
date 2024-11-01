@@ -3,6 +3,23 @@
 # Uncomment line below for debugging
 # set -x
 
+####################################################################################################
+#
+# THIS SCRIPT IS NOT AN OFFICIAL PRODUCT OF JAMF SOFTWARE
+# AS SUCH IT IS PROVIDED WITHOUT WARRANTY OR SUPPORT
+#
+# BY USING THIS SCRIPT, YOU AGREE THAT JAMF SOFTWARE
+# IS UNDER NO OBLIGATION TO SUPPORT, DEBUG, OR OTHERWISE
+# MAINTAIN THIS SCRIPT
+#
+####################################################################################################
+#
+# DESCRIPTION
+#
+# Configures "saved searches / filters" in Console.app
+# 
+####################################################################################################
+
 # Adapted from :
 # - https://macadmins.slack.com/archives/C04QVP86E/p1709310398391859?thread_ts=1682553349.070919&cid=C04QVP86E
 # - https://macadmins.slack.com/archives/CH8LPK7KP/p1703702567193819?thread_ts=1697555678.463919&cid=CH8LPK7KP
@@ -16,11 +33,12 @@
 # 
 # - https://emmer.dev/blog/automate-your-macos-defaults/
 
+####################################################################################################
 
-# defaults export "/Users/praju16/Library/Preferences/com.apple.Console" - | plutil -extract userFilters raw -
+# defaults export "/Users/xxxxxx/Library/Preferences/com.apple.Console" - | plutil -extract userFilters raw -
 DATA_userFilters="YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVt1c2VyRmlsdGVyc4ABqgsMEhwdISkqMDNVJG51bGzSDQ4PEVpOUy5vYmplY3RzViRjbGFzc6EQgAKACNUOExQVFhcYGRobV2ZpbHRlcnNUbmFtZVxjYW5CZVJlbW92ZWRaaWRlbnRpZmllcoAJgASAAwmAAF5qYW1mIHN1YnN5c3RlbdINDh4RoR+ABYAI1A4iIyQlJicoXxAba0NTS0ZpbHRlckNvbXBhcmlzb25UeXBlS2V5XxASa0NTS0ZpbHRlclZhbHVlS2V5XxARa0NTS0ZpbHRlclR5cGVLZXmABxAAgAYQCVhjb20uamFtZtIrLC0uWiRjbGFzc25hbWVYJGNsYXNzZXNZQ1NLRmlsdGVyoi0vWE5TT2JqZWN00issMTJXTlNBcnJheaIxL9IrLDQ1XxASQ29uc29sZS5GaWx0ZXJJdGVtojYvXxASQ29uc29sZS5GaWx0ZXJJdGVtAAgAEQAaACQAKQAyADcASQBMAFgAWgBlAGsAcAB7AIIAhACGAIgAkwCbAKAArQC4ALoAvAC+AL8AwQDQANUA1wDZANsA5AECARcBKwEtAS8BMQEzATwBQQFMAVUBXwFiAWsBcAF4AXsBgAGVAZgAAAAAAAACAQAAAAAAAAA3AAAAAAAAAAAAAAAAAAABrQ=="
 
-# defaults export "/Users/praju16/Library/Preferences/com.apple.Console" - | plutil -extract builtInFiltersPositions raw -
+# defaults export "/Users/xxxxxx/Library/Preferences/com.apple.Console" - | plutil -extract builtInFiltersPositions raw -
 DATA_builtInFiltersPositions="YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICV8QF2J1aWx0SW5GaWx0ZXJzUG9zaXRpb25zgAGnCwwXGBkaG1UkbnVsbNMNDg8QExZXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6IREoACgAOiFBWABIAFgAZcYWxsX21lc3NhZ2VzXxAVYWxsX3Ryb3VibGVkX21lc3NhZ2VzEAAQAdIcHR4fWiRjbGFzc25hbWVYJGNsYXNzZXNcTlNEaWN0aW9uYXJ5oh4gWE5TT2JqZWN0AAgAEQAaACQAKQAyADcASQBMAGYAaABwAHYAfQCFAJAAlwCaAJwAngChAKMApQCnALQAzADOANAA1QDgAOkA9gD5AAAAAAAAAgEAAAAAAAAAIQAAAAAAAAAAAAAAAAAAAQI="
 
 
