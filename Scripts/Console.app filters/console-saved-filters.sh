@@ -26,9 +26,9 @@
 
 # Tips:
 # 
-# defaults read /Users/praju16/Library/Preferences/com.apple.Console.plist > /tmp/before
+# defaults read /Users/xxxxxx/Library/Preferences/com.apple.Console.plist > /tmp/before
 # <Make the changes>
-# defaults read /Users/praju16/Library/Preferences/com.apple.Console.plist > /tmp/after
+# defaults read /Users/xxxxxx/Library/Preferences/com.apple.Console.plist > /tmp/after
 # diff /tmp/before /tmp/after
 # 
 # - https://emmer.dev/blog/automate-your-macos-defaults/
