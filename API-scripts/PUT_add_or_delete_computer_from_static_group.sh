@@ -31,6 +31,8 @@
 # 
 ####################################################################################################
 
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec:/usr/local/bin
+
 # url="$4"              # Parameter 4 - JPRO URL
 # client_id="$5"        # Parameter 5 - API Client
 # client_secret="$6"    # Parameter 6 - API Secret
@@ -116,5 +118,9 @@ xmlData="<computer_group>
 #     --data "$xmlData"
 
 invalidateToken
+
+# For Restricted Software to reflect the change, the client needs to update the management framework
+echo "running a jamf manage"
+/usr/local/bin/jamf manage
 
 exit 0
