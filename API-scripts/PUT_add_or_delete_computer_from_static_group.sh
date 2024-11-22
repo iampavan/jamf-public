@@ -31,17 +31,18 @@
 # 
 ####################################################################################################
 
-# url="$4"            # Parameter 4 - JPRO URL
-# client_id="$5"      # Parameter 5 - API Client
-# client_secret="$6"  # Parameter 6 - API Secret
-# StaticGroupID="$7"  # Parameter 7 - JPRO Static Group ID
+# url="$4"              # Parameter 4 - JPRO URL
+# client_id="$5"        # Parameter 5 - API Client
+# client_secret="$6"    # Parameter 6 - API Secret
+# static_group_id="$7"  # Parameter 7 - Static Group ID
 
 url="https://yourserver.jamfcloud.com"
 client_id="your-client-id"
 client_secret="yourClientSecret"
-StaticGroupID="GroupID#Here"
 
-apiURL="JSSResource/computergroups/id"
+static_group_id="GroupID#Here" # JPRO Static Group Information
+
+api_endpoint="JSSResource/computergroups/id"
 
 serial_number=$(ioreg -c IOPlatformExpertDevice -d 2 | awk -F\" '/IOPlatformSerialNumber/{print $(NF-1)}')
 
@@ -95,7 +96,7 @@ xmlData="<computer_group>
 
 /usr/bin/curl --request PUT \
     --header "Authorization: Bearer $access_token" \
-    "${url}/${apiURL}/${StaticGroupID}" \
+    "${url}/${api_endpoint}/${static_group_id}" \
     --header "Content-Type: application/xml" \
     --data "$xmlData"
 
@@ -110,7 +111,7 @@ xmlData="<computer_group>
 
 # /usr/bin/curl --request PUT \
 #     --header "Authorization: Bearer $access_token" \
-#     "${url}/${apiURL}/${StaticGroupID}" \
+#     "${url}/${api_endpoint}/${static_group_id}" \
 #     --header "Content-Type: application/xml" \
 #     --data "$xmlData"
 
