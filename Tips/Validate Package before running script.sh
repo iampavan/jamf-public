@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec:/usr/local/jamf/bin
+
 # Use case :
 # Let's say Jamf Policy contains a package + script 
 # If Package installation fails (for whatever reason), the script should not execute
