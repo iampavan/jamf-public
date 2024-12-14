@@ -22,16 +22,16 @@ function scriptLogging {
     
     local jamfPID
     jamfPID=$(pgrep -ax jamf | grep -v grep | tail -n1)
-	
-	if [[ -z "$jamfPID" ]]; then
-		# echo "jamf PID not found. Checking JamfDaemon PID..."
-		jamfPID=$(pgrep JamfDaemon)
+    
+    if [[ -z "$jamfPID" ]]; then
+    	# echo "jamf PID not found. Checking JamfDaemon PID..."
+     	jamfPID=$(pgrep JamfDaemon)
 
-		if [[ -z "$jamfPID" ]]; then
-        # echo "JamfDaemon PID also not found."
-        jamfPID=$$ # Using shell PID.
-     fi
-	fi
+	if [[ -z "$jamfPID" ]]; then
+        	# echo "JamfDaemon PID also not found."
+        	jamfPID=$$ # Using shell PID.
+     	fi
+    fi
     
     local jamfLog
     jamfLog="/var/log/jamf.log"
