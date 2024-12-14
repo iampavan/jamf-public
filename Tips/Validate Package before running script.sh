@@ -43,12 +43,21 @@ function scriptLogging {
 # Another way :
 #
 # scriptLogging() {
+# 	#unset xtrace if enabled to quiet this function
 # 	[ -n "${-//[^x]/}" ] && { local xTrace=1; set +x; } &>/dev/null
+# 	#take input either as a parameter or piped in
+# 	if [ -n "${1}" ]; then local input="${1}"; elif [ ! -t '0' ]; then local input=$(cat); else return; fi
+# 	#default destination is override-able
 # 	local logFile="${2:-/var/log/jamf.log}"
-# 	#if it exists but we cannot write to the log or it does not exist, unset and tee simply echoes
-# 	[ -e "${logFile}" -a ! -w "${logFile}" ] && unset logFile
-# 	#this will tee to jamf.log in the jamf log format: <Day> <Month> DD HH:MM:SS <Computer Name> ProcessName[PID]: <Message>
-# 	builtin echo "$(/bin/date +'%a %b %d %H:%M:%S') ${jamflog_myComputerName:="$(/usr/sbin/scutil --get ComputerName)"} ${jamflog_myName:="$(/usr/bin/basename "${0%.*}")"}[${myPID:=$$}]: ${1}" | /usr/bin/tee -a "${logFile}" 2>/dev/null
+# 	#if we cannot write to the log, unset and tee simply echoes
+# 	([ -e "${logFile}" ] && [ ! -w "${logFile}" ]) && unset logFile
+# 	#process each line
+# 	local IFS=$'\n'
+# 	for line in ${input}; do
+# 		#this will tee to jamf.log in the jamf log format: <Day> <Month> DD HH:MM:SS <Computer Name> ProcessName[PID]: <Message>
+# 		builtin echo "$(/bin/date +'%a %b %d %H:%M:%S') ${jamflog_myComputerName:="$(/usr/sbin/scutil --get ComputerName)"} ${jamflog_myName:="$(/usr/bin/basename "${0%.*}")"}[${myPID:=$$}]: ${line}" | /usr/bin/tee -a "${logFile}" 2>/dev/null
+# 	done
+# 	#re-enable xtrace if it was on
 # 	[ "${xTrace:-0}" = 1 ] && { set -x; } &>/dev/null
 # }
 #
