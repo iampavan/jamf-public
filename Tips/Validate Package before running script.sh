@@ -6,7 +6,10 @@
 
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec:/usr/local/jamf/bin
 
-scriptName=$(basename "$0")
+# scriptName=$(basename "$0")
+
+readonly scriptName=$(basename "${0%.*}")
+readonly scriptVersion="2.0.5"
 
 ####################################################################################
 # FUNCTIONS
