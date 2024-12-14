@@ -40,6 +40,21 @@ function scriptLogging {
     echo "${eventTimestamp}" "${localHostName}" "jamf[${jamfPID}]:" "${scriptName} -" "$1" | tee -a "${jamfLog}"
 }
 
+# Another way :
+#
+# scriptLogging() {
+# 	[ -n "${-//[^x]/}" ] && { local xTrace=1; set +x; } &>/dev/null
+# 	local logFile="${2:-/var/log/jamf.log}"
+# 	#if it exists but we cannot write to the log or it does not exist, unset and tee simply echoes
+# 	[ -e "${logFile}" -a ! -w "${logFile}" ] && unset logFile
+# 	#this will tee to jamf.log in the jamf log format: <Day> <Month> DD HH:MM:SS <Computer Name> ProcessName[PID]: <Message>
+# 	builtin echo "$(/bin/date +'%a %b %d %H:%M:%S') ${jamflog_myComputerName:="$(/usr/sbin/scutil --get ComputerName)"} ${jamflog_myName:="$(/usr/bin/basename "${0%.*}")"}[${myPID:=$$}]: ${1}" | /usr/bin/tee -a "${logFile}" 2>/dev/null
+# 	[ "${xTrace:-0}" = 1 ] && { set -x; } &>/dev/null
+# }
+#
+# Output:
+# Sat Dec 14 11:25:24 GYXXXX1111 restartScheduler[12731]: Current Uptime : 0 days = 17 hours = 1044 minutes = 62641 seconds
+
 ####################################################################################
 # MAIN LOGIC
 ####################################################################################
