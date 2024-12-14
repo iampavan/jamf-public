@@ -1,10 +1,12 @@
 #!/bin/bash
 
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec:/usr/local/jamf/bin
-
 # Use case :
 # Let's say Jamf Policy contains a package + script 
 # If Package installation fails (for whatever reason), the script should not execute
+
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec:/usr/local/jamf/bin
+
+scriptName=$(basename "$0")
 
 ####################################################################################
 # FUNCTIONS
@@ -19,12 +21,23 @@ function scriptLogging {
     localHostName=$(scutil --get ComputerName)
     
     local jamfPID
-    jamfPID=$(pgrep JamfDaemon)
+    jamfPID=$(pgrep -ax jamf | grep -v grep | tail -n1)
+	
+	if [[ -z "$jamfPID" ]]; then
+		# echo "jamf PID not found. Checking JamfDaemon PID..."
+		jamfPID=$(pgrep JamfDaemon)
+
+		if [[ -z "$jamfPID" ]]; then
+        # echo "JamfDaemon PID also not found."
+        jamfPID=$$ # Using shell PID.
+     fi
+	fi
     
     local jamfLog
     jamfLog="/var/log/jamf.log"
     
-    echo "${eventTimestamp}" "${localHostName}" "jamf[${jamfPID}]:" "$1" | tee -a "${jamfLog}"
+    # echo "${eventTimestamp}" "${localHostName}" "jamf[${jamfPID}]:" "$1" | tee -a "${jamfLog}"
+    echo "${eventTimestamp}" "${localHostName}" "jamf[${jamfPID}]:" "${scriptName} -" "$1" | tee -a "${jamfLog}"
 }
 
 ####################################################################################
