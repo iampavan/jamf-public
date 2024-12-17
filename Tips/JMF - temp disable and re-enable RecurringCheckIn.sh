@@ -21,7 +21,7 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec
 # scriptName=$(basename "$0")
 
 readonly scriptName=$(basename "${0%.*}")
-readonly scriptVersion="2.0.5"
+readonly scriptVersion="2025.01.001"
 
 ####################################################################################
 # FUNCTIONS
