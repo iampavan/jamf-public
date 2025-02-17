@@ -7,24 +7,13 @@
 # Adapted from : https://github.com/matteo-bolognini/Jamf-Pro/blob/main/scripts/bash/Create_API_Client_Full_Permisions.sh
 # Adapted from : https://github.com/rtrouton/rtrouton_scripts/tree/main/rtrouton_scripts/Casper_Scripts/Jamf_Pro_Webhook_Download
 
-#---------------
-# Use this to create READ-only API Role and Client :
+# ===============
 
 #Add the name of the API Role
-api_role_displayName="APIRole_READpermissions_2025-xx-xx"
-api_client_displayName="APIClient_READpermissions_2025-xx-xx"
-##Extract READ-only API privileges
-# privileges=$(echo "$json" | jq -r '.privileges[]' | grep 'Read' | awk '{printf "\"%s\", ", $0}' | sed 's/, $//' )
-#---------------
+api_role_displayName="APIRole_FULLpermissions_2025-xx-xx"
 
-# ===============
-# Use this to create Full API Role and Client :
-
-##Add the name of the API Role
-#api_role_displayName="APIRole_FULLpermissions_2025-xx-xx"
-
-##Add the name of the API Client
-#api_client_displayName="APIClient_FULLpermissions_2025-xx-xx"
+#Add the name of the API Client
+api_client_displayName="APIClient_FULLpermissions_2025-xx-xx"
 
 #The access token lifetime in seconds 
 lifetime="300"
