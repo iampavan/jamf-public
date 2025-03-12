@@ -10,7 +10,7 @@
 # ===============
 
 #Add the name of the API Role
-api_client_displayName="APIRole_READpermissions_2025-xx-xx"
+api_role_displayName="APIRole_READpermissions_2025-xx-xx"
 
 #Add the name of the API Client
 api_client_displayName="APIClient_READpermissions_2025-xx-xx"
